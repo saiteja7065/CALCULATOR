@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="cal-bg-container">
+        <div class="calculator">
+        <input type="text" class="display" id="result" disabled>
+        <div class="button-grid mt-2">
+            <button onclick="clearScreen()" class="text-white">C</button>
+            <button onclick="appendOperator('+')" class="text-white">+</button>
+            <button onclick="appendOperator('-')" class="text-white">-</button>
+            <button onclick="appendOperator('*')" class="text-white">*</button>
+            <button onclick="appendNumber('7')" class="text-white">7</button>
+            <button onclick="appendNumber('8')" class="text-white">8</button>
+            <button onclick="appendNumber('9')" class="text-white">9</button>
+            <button onclick="appendOperator('/')" class="text-white">/</button>
+            <button onclick="appendNumber('4')" class="text-white">4</button>
+            <button onclick="appendNumber('5')" class="text-white">5</button>
+            <button onclick="appendNumber('6')" class="text-white">6</button>
+            <button onclick="appendNumber('.')" class="text-white">.</button>
+            <button onclick="appendNumber('1')" class="text-white">1</button>
+            <button onclick="appendNumber('2')" class="text-white">2</button>
+            <button onclick="appendNumber('3')" class="text-white">3</button>
+            <button onclick="calculate()" class="text-white">=</button>
+            <button onclick="appendNumber('0')" class="text-white">0</button>
+        </div>
+        </div>
+        <script src="cal.js"></script>
+    </div>
+</body>
+</html>
