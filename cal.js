@@ -3,6 +3,34 @@ let currentNumber = "";
 let previousNumber = "";
 let operator = "";
 
+function performCalculation(previousNum, op, currentNum) {
+  let num1 = parseFloat(previousNum);
+  let num2 = parseFloat(currentNum);
+  let result;
+
+  switch (op) {
+    case '+':
+      result = num1 + num2;
+      break;
+    case '-':
+      result = num1 - num2;
+      break;
+    case '*':
+      result = num1 * num2;
+      break;
+    case '/':
+      if (num2 === 0) {
+        return "Error: Division by zero";
+      }
+      result = num1 / num2;
+      break;
+    default:
+      return "Error: Invalid operator";
+  }
+
+  return result.toString();
+}
+
 function appendNumber(number) {
   currentNumber += number;
   result.value = currentNumber;
@@ -25,14 +53,13 @@ function clearScreen() {
 
 function calculate() {
   if (currentNumber !== "" && operator !== "") {
-    let calculation = `${previousNumber} ${operator} ${currentNumber}`;
     try {
-      result.value = eval(calculation);
+      result.value = performCalculation(previousNumber, operator, currentNumber);
       previousNumber = result.value;
       currentNumber = "";
       operator = "";
     } catch (err) {
-      result.value = "Error";
+      result.value = err;
     }
   }
 }
