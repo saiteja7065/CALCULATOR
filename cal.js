@@ -15,7 +15,7 @@ function performCalculation(previousNum, op, currentNum) {
     case '-':
       result = num1 - num2;
       break;
-    case '*':
+    case 'x':
       result = num1 * num2;
       break;
     case '/':
@@ -33,14 +33,17 @@ function performCalculation(previousNum, op, currentNum) {
 
 function appendNumber(number) {
   currentNumber += number;
-  result.value = currentNumber;
+  result.value = previousNumber + operator + currentNumber;
 }
 
 function appendOperator(op) {
   if (currentNumber !== "") {
-    previousNumber = currentNumber;
-    currentNumber = "";
+    if (previousNumber === "") {
+      previousNumber = currentNumber;
+    }
     operator = op;
+    currentNumber = "";
+    result.value = previousNumber + operator;
   }
 }
 
